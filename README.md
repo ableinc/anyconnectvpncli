@@ -30,6 +30,14 @@ sh vpn.sh
 
 That's it!
 
+## Not sure you VPN host?
+Run this command in your terminal:
+
+```bash
+sh vpn.sh
+```
+Then type "hosts" when prompted. From there you'll get a list of available hosts. Please refer to the Configuration section above for implementation.
+
 ## Want to collaborate?
 
 If you want to collaborate on a code project, please [send me an email (click me)](mailto:douglas.jaylen.work@gmail.com)
