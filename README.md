@@ -40,6 +40,20 @@ sh vpn.sh
 
 Then type "hosts" when prompted. From there you'll get a list of available hosts. Please refer to the Configuration section above for implementation.
 
+## Changelog
+
+***v1.0.1***
+
+Issue: Variable strings with "%" character.
+
+Reason: printf is a shell built into Bash, similar to C printf(). printf uses special characters for string formatting. When a string contains a "%", that is not being used for formatting purposes, the printf command does not know how to handle it. Thus, requiring a specific format to instantiate the variable string.
+
+Fix: Use the printf FORMAT [ARGUMENT] structure. i.e print "%s" $variable
+
+***v1.0.0***
+
+Initial release.
+
 ## Want to collaborate?
 
 If you want to collaborate on a code project, please [send me an email (click me)](mailto:douglas.jaylen.work@gmail.com)

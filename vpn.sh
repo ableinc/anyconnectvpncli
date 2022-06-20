@@ -5,9 +5,8 @@ if [ $choice == 'connect' ]; then
     #PASS=$pass
     USERNAME='YOUR-USERNAME-HERE'
     PASS='YOUR-PASSWORD-HERE'
-    CMD="$USERNAME\n$PASS\n$code\ny"
-    #CMD="$USERNAME\n$PASS\ny"
-    printf $CMD | /opt/cisco/anyconnect/bin/vpn -s connect [YOUR-VPN-HOST-NO-BRACKETS]
+    printf "%s\n%s\n%s\ny" $USERNAME $PASS $code | /opt/cisco/anyconnect/bin/vpn -s connect [YOUR-VPN-HOST-NO-BRACKETS]
+    # printf "%s\n%s\ny" $USERNAME $PASS | /opt/cisco/anyconnect/bin/vpn -s connect [YOUR-VPN-HOST-NO-BRACKETS]
 elif [ $choice == 'disconnect' ]; then
     /opt/cisco/anyconnect/bin/vpn disconnect
 elif [ $choice == 'hosts' ]; then
@@ -18,6 +17,8 @@ elif [ $choice == 'stats' ]; then
     /opt/cisco/anyconnect/bin/vpn stats
 elif [ $choice == 'help' ]; then
     /opt/cisco/anyconnect/bin/vpn --help
+elif [ $choice == '--version' ]; then
+    echo "1.0.1"
 else
     echo "Invalid choice given. Terminating script."
 fi
