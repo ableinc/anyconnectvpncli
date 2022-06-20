@@ -54,6 +54,11 @@ Fix: Use the printf FORMAT [ARGUMENT] structure. i.e print "%s" $variable
 
 Initial release.
 
+## Add script to your PATH? 
+
+This Stackoverflow post will guide you step by step: [Add bash script to PATH](https://stackoverflow.com/questions/20054538/add-a-bash-script-to-path)
+
+
 ## Want to collaborate?
 
 If you want to collaborate on a code project, please [send me an email (click me)](mailto:douglas.jaylen.work@gmail.com)
