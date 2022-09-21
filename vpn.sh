@@ -4,7 +4,8 @@ if [ $choice == 'connect' ]; then
     #read -sp "Password > " pass
     #PASS=$pass
     USERNAME='YOUR-USERNAME-HERE'
-    PASS='YOUR-PASSWORD-HERE'
+    PASS_ENCODED='YOUR-BASE64-ENCODED-PASSWORD-HERE'
+    PASS=`echo $PASS_ENCODED | base64 --decode`
     printf "%s\n%s\n%s\ny" $USERNAME $PASS $code | /opt/cisco/anyconnect/bin/vpn -s connect [YOUR-VPN-HOST-NO-BRACKETS]
     # printf "%s\n%s\ny" $USERNAME $PASS | /opt/cisco/anyconnect/bin/vpn -s connect [YOUR-VPN-HOST-NO-BRACKETS]
 elif [ $choice == 'disconnect' ]; then
@@ -18,7 +19,7 @@ elif [ $choice == 'stats' ]; then
 elif [ $choice == 'help' ]; then
     /opt/cisco/anyconnect/bin/vpn --help
 elif [ $choice == '--version' ]; then
-    echo "1.0.1"
+    echo "1.0.2"
 else
     echo "Invalid choice given. Terminating script."
 fi
