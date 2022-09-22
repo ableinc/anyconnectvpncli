@@ -42,6 +42,12 @@ Then type "hosts" when prompted. From there you'll get a list of available hosts
 
 ## Changelog
 
+***v1.0.2***
+Your password must now be base64 encoded. This is done for security reasons, so that your password isn't sitting on your system in plain text. You can determine your the base64 string for your password by running this on your linux/unix system:
+```bash
+echo 'YOUR-PASSWORD-HERE' | base64
+```
+
 ***v1.0.1***
 
 Issue: Variable strings with "%" character.
