@@ -12,11 +12,11 @@ Using a bash script with your credentials pre-filled, it will use AnyConnect's b
 
 If you do not want your password stored on your machine:
 
-1. Please uncomment lines 4 & 5, then comment line 7.
+1. Please uncomment lines 4 & 5, then comment line 7 & 8.
 
 If you do not require a security code to login:
 
-1. Please comment out lines 3 & 8 and uncomment line 9.
+1. Please comment out lines 3 & 9 and uncomment line 10.
 
 Make sure to change "[YOUR-VPN-HOST-NO-BRACKETS]" to your VPN host on line 10.
 
@@ -41,6 +41,13 @@ sh vpn.sh
 Then type "hosts" when prompted. From there you'll get a list of available hosts. Please refer to the Configuration section above for implementation.
 
 ## Changelog
+
+***v1.0.2***
+
+Your password must now be base64 encoded. This is done for security reasons, so that your password isn't sitting on your system in plain text. You can determine your the base64 string for your password by running this on your linux/unix system:
+```bash
+echo 'YOUR-PASSWORD-HERE' | base64
+```
 
 ***v1.0.1***
 
